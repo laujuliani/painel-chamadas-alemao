@@ -81,30 +81,15 @@ if arquivos_enviados:
         
         st.success(f"Painel carregado! Total de registros filtrados: {len(df)}")
 
-        # CÁLCULO DOS KPIS (Necessários para a tela e para o PDF)
+        # CÁLCULO DOS KPIS (Necessários para a tela)
         total_chamadas = len(df)
         chamadas_atendidas = (df['Status'] == 'Atendida').sum()
         chamadas_perdidas = (df['Status'] == 'Não Atendida').sum()
         
         # Contando chamadas que terminaram no atendimento URA
         chamadas_ura = (df['Status'] == 'Atendimento URA').sum()
-
-        # --- BOTÃO DE DOWNLOAD DO PDF NA BARRA LATERAL ---
-        st.sidebar.divider()
-        st.sidebar.subheader("Exportar Dados")
-        
-        if st.sidebar.button("📥 Gerar Relatório em PDF"):
-            caminho_pdf = gerar_pdf(df, total_chamadas, chamadas_atendidas, chamadas_perdidas, chamadas_ura)
-            
-            with open(caminho_pdf, "rb") as f:
-                st.sidebar.download_button(
-                    label="Baixar Arquivo PDF",
-                    data=f,
-                    file_name="relatorio_chamadas_alemao.pdf",
-                    mime="application/pdf"
-                )
-
-        # 3. INDICADORES PRINCIPAIS (KPIs) COM A URA INCLUÍDA 📌
+    
+        # 3. INDICADORES PRINCIPAIS (KPIs) COM A URA INCLUÍDA 
         st.divider()
         st.subheader(":material/push_pin: Indicadores Principais")
 
