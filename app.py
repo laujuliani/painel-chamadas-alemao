@@ -6,7 +6,7 @@ import plotly.express as px
 st.set_page_config(page_title="Painel de Chamadas - Alemão Autopeças", layout="wide")
 
 # Exibindo a logo da Alemão Autopeças no topo da barra lateral
-st.sidebar.image("Calendário Alemão 2025.png (3).png", use_container_width=True)
+st.sidebar.image("logo.png", use_container_width=True)
 st.sidebar.divider()
 
 st.title(":material/phone: Painel de Análise de Chamadas da Alemão Autopeças")
