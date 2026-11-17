@@ -4,6 +4,8 @@ Aplicação web em Python e Streamlit que transforma relatórios de chamadas do 
 
 Desenvolvido para a equipe gerencial da Alemão Autopeças, substituindo a análise manual das planilhas exportadas do sistema.
 
+![Visão geral do painel](docs/visao-geral.png)
+
 ## O problema
 
 Os relatórios de chamadas saem do sistema de telefonia como planilhas separadas, uma por período, e analisá-las manualmente é lento e sujeito a erro. A gestão precisava responder rapidamente perguntas como:
